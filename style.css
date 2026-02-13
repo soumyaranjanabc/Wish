@@ -33,10 +33,29 @@ body {
   font-size: 1.8rem;
   opacity: 0.25;
   animation: float 14s linear infinite;
+  pointer-events: none;
 }
 
 @keyframes float {
   to { transform: translateY(120vh); }
+}
+
+/* Falling flowers */
+.flowers::before {
+  content: "🌹 🌸 🌷 🌺 🌼";
+  position: fixed;
+  top: -10%;
+  width: 100%;
+  font-size: 1.9rem;
+  opacity: 0.35;
+  animation: flowersFall 18s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes flowersFall {
+  to {
+    transform: translateY(130vh) rotate(360deg);
+  }
 }
 
 /* Music overlay */
@@ -58,8 +77,10 @@ body {
   border-radius: 30px;
 }
 
-/* Main container */
-.container, .card, .final {
+/* Shared card styles */
+.container,
+.card,
+.final {
   width: 90%;
   max-width: 360px;
   background: rgba(255,255,255,0.22);
@@ -69,6 +90,7 @@ body {
   box-shadow: 0 25px 45px rgba(0,0,0,0.35);
 }
 
+/* Headings */
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
@@ -78,20 +100,29 @@ h1 {
   margin: 12px 0 25px;
 }
 
+/* YES / NO buttons area */
 .buttons {
   position: relative;
   height: 120px;
 }
 
+/* General button (NORMAL FLOW) */
 button {
-  width: 120px;
+  display: inline-block;
   padding: 14px 0;
   border-radius: 30px;
   border: none;
   font-size: 1rem;
-  position: absolute;
 }
 
+/* Only YES/NO are absolute */
+.buttons button {
+  position: absolute;
+  width: 120px;
+  cursor: pointer;
+}
+
+/* YES */
 #yesBtn {
   left: 10%;
   background: linear-gradient(135deg, #ff1e56, #ff4d6d);
@@ -99,12 +130,14 @@ button {
   transform: scale(1.25);
 }
 
+/* NO */
 #noBtn {
   right: 10%;
   background: white;
   color: #ff1e56;
 }
 
+/* Greeting card */
 .card h2 {
   font-size: 2.1rem;
   margin-bottom: 15px;
@@ -114,13 +147,16 @@ button {
   line-height: 1.6;
 }
 
+/* Continue button FIXED */
 #finalBtn {
-  margin-top: 20px;
+  margin-top: 22px;
+  width: 100%;
   background: #ff1e56;
   color: white;
-  width: 100%;
+  position: static;
 }
 
+/* Final screen */
 .final {
   animation: fadeIn 1s ease forwards;
 }
@@ -150,25 +186,4 @@ button {
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
-}
-/* 🌸 Falling Flowers */
-.flowers::before {
-  content: "🌹 🌸 🌷 🌺 🌼";
-  position: fixed;
-  top: -10%;
-  left: 0;
-  width: 100%;
-  font-size: 1.9rem;
-  opacity: 0.35;
-  animation: flowersFall 18s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes flowersFall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  100% {
-    transform: translateY(130vh) rotate(360deg);
-  }
 }
