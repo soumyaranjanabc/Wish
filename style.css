@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff758c, #c77dff, #ffd6a5);
+  background-size: 300% 300%;
+  animation: gradient 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Background hearts */
+.bg-hearts::before {
+  content: "💖 💕 💘 💗 💓";
+  position: fixed;
+  top: -10%;
+  width: 100%;
+  font-size: 1.8rem;
+  opacity: 0.25;
+  animation: float 14s linear infinite;
+}
+
+@keyframes float {
+  to { transform: translateY(120vh); }
+}
+
+/* Music overlay */
+.music-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.music-overlay p {
+  font-size: 1.4rem;
+  background: white;
+  color: #ff1e56;
+  padding: 18px 30px;
+  border-radius: 30px;
+}
+
+/* Main container */
+.container, .card, .final {
+  width: 90%;
+  max-width: 360px;
+  background: rgba(255,255,255,0.22);
+  padding: 30px 20px;
+  border-radius: 24px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.35);
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+}
+
+.name {
+  margin: 12px 0 25px;
+}
+
+.buttons {
+  position: relative;
+  height: 120px;
+}
+
+button {
+  width: 120px;
+  padding: 14px 0;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  position: absolute;
+}
+
+#yesBtn {
+  left: 10%;
+  background: linear-gradient(135deg, #ff1e56, #ff4d6d);
+  color: white;
+  transform: scale(1.25);
+}
+
+#noBtn {
+  right: 10%;
+  background: white;
+  color: #ff1e56;
+}
+
+.card h2 {
+  font-size: 2.1rem;
+  margin-bottom: 15px;
+}
+
+.card p {
+  line-height: 1.6;
+}
+
+#finalBtn {
+  margin-top: 20px;
+  background: #ff1e56;
+  color: white;
+  width: 100%;
+}
+
+.final {
+  animation: fadeIn 1s ease forwards;
+}
+
+.final h1 {
+  font-size: 2.3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Heart burst */
+.heart {
+  position: fixed;
+  font-size: 1.8rem;
+  animation: burst 1s ease forwards;
+}
+
+@keyframes burst {
+  to {
+    transform: translateY(-120px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* 🌸 Falling Flowers */
+.flowers::before {
+  content: "🌹 🌸 🌷 🌺 🌼";
+  position: fixed;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  font-size: 1.9rem;
+  opacity: 0.35;
+  animation: flowersFall 18s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes flowersFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(130vh) rotate(360deg);
+  }
+}

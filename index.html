@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine? ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Floating hearts background -->
+  <div class="bg-hearts"></div>
+  <!-- Falling flowers -->
+  <div class="flowers"></div>
+
+
+  <!-- Tap to start music -->
+  <div class="music-overlay" id="musicOverlay">
+    <p>Tap to begin 💖</p>
+  </div>
+
+  <!-- Question -->
+  <div class="container" id="questionBox">
+    <h1>Will you be my Valentine? 💕</h1>
+    <p class="name">My Sweetheart Kajal 🌸</p>
+
+    <div class="buttons">
+      <button id="yesBtn">YES 💘</button>
+      <button id="noBtn">NO 🙈</button>
+    </div>
+  </div>
+
+  <!-- Greeting card -->
+  <div class="card hidden" id="card">
+    <h2>Happy Valentine’s Day 💝</h2>
+    <p>
+      My Sweetheart Kajal,<br><br>
+      You are my comfort, my smile, and my favorite feeling.
+      Choosing you is the best decision of my life. ❤️<br><br>
+      Forever yours 💌
+    </p>
+    <button id="finalBtn">Continue 🌹</button>
+  </div>
+
+  <!-- Final screen -->
+  <div class="final hidden" id="final">
+    <h1>I Love You Kajal ❤️</h1>
+    <p>Today, tomorrow, and always 🌸</p>
+  </div>
+
+  <!-- Music -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
